@@ -120,7 +120,7 @@ def send_message():   # this function is defined to send a message to a friend
     print "Your secret message image is ready!"
 
 
-def read_message():# this function is defined to read a message sent by a friend
+def read_message():                                    # this function is defined to read a message sent by a friend
 
 
     dict_special_words={'asap':'as soon as possible','lol':'laugh out loud','gtg':'got to go'}
@@ -133,17 +133,16 @@ def read_message():# this function is defined to read a message sent by a friend
 
     new_chat = ChatMessage(secret_text,False)
 
-    if len(secret_text.split())>50:
-        friends.remove(friends[sender])
-    elif len(secret_text)==0 :
+    if len(secret_text.split())>50:                    # Checking if the friend spoke more than 50 word
+        friends.remove(friends[sender])                # Deleting the friend if he spoke more than 50 words
+    elif len(secret_text)==0 :                         # Checking if the image contains any text or not
         print ('there is no secret text in your image')
     else:
-        for word in dict_special_words.keys():
-            found=secret_text.find(word)
+        for word in dict_special_words.keys():         # Checking special words
+            found=secret_text.find(word)               # Checking if the the Secret_text contains special words or not
             if found!=-1:
                 print(word + '=' + dict_special_words[word])
-            #else:
-             #   print ('no special words found')
+
 
         friends[sender].chats.append(new_chat)
         print secret_text
@@ -161,6 +160,7 @@ def read_chat_history(): # this function is defined to read the chat history of 
         if chat.sent_by_me:
             print '[%s] %s: %s' % (chat.time.strftime("%d %B %Y"), 'You said:', chat.message)
         else:
+            # Adding colors to time, friend and secret_text
             print '[%s] %s said: %s' % (colored(chat.time.strftime("%d %B %Y"),"red","on_blue"), colored(friends[read_for].name, "green","on_red"), colored(chat.message, "blue","on_green"))
 
 
