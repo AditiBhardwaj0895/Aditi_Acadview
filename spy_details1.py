@@ -21,9 +21,9 @@ class ChatMessage:
 
 spy = Spy('Rahul', 'Mr.', 24, 4.7)
 
-friend_one = Spy('Akhil', 'Mr.', 4.9, 27)
-friend_two = Spy('Anjali', 'Ms.', 4.39, 21)
-friend_three = Spy('Akash', 'Dr.', 4.95, 37)
+friend_one = Spy('Akhil', 'Mr.',27,4.9)
+friend_two = Spy('Anjali', 'Ms.', 21, 4.39)
+friend_three = Spy('Akash', 'Dr.', 37, 4.95)
 
 
 friends = [friend_one, friend_two, friend_three]

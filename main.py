@@ -18,7 +18,6 @@ STATUS_MESSAGES = ['My name is Bond, James Bond', 'Shaken, not stirred.', 'Keepi
 question= "Do you want to continue as " + spy.salutation + " " + spy.name + " (Y/N)? "     # String Concatenation using + symbol
 ans = raw_input(question.upper())  #raw_input always gives us a string
 
-
 def add_status():     #defining add_status() function to update a new status
 
     updated_status_message = None
@@ -201,7 +200,7 @@ def start_chat(spy):
     else:
         print 'Sorry you are not of the correct age to be a spy'
 
-if ans== "Y":
+if ans.upper()== "Y":
     start_chat(spy)
 else:
 
@@ -218,6 +217,12 @@ else:
 
         spy.rating = raw_input("What is your spy rating?")
         spy.rating = float(spy.rating)
+        if spy.rating>=5:
+            print "AWESOME!!"
+        elif spy.rating>=4:
+            print "good"
+        else:
+            print "AVERAGE"
 
         start_chat(spy)
     else:
