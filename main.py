@@ -24,7 +24,7 @@ def add_status():     #defining add_status() function to update a new status
 
     if spy.current_status_message != None:
 
-        print 'Your current status message is %s \n' % (spy.current_status_message)
+        print 'Your current status message : %s \n' % (spy.current_status_message)
     else:
         print 'You don\'t have any status message currently \n'
 
